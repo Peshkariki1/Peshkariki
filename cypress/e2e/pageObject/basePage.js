@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 import selectors from '../selectors';
+const fixtures = require('../../fixtures/data');
 
 class BasePage {
     constructor() {
@@ -10,13 +11,9 @@ class BasePage {
       this.userPhone = selectors.loginPage.userPhone;
       this.passwordInput = selectors.loginPage.passwordInput;
       this.loginButton = selectors.loginPage.loginButton;
-      this.baseUrl = 'https://alt10.peshkariki.ru';
-      this.timeout = 5000; 
-      this.waitForNavigation = true;
-
     }
     openLoginPage() {
-        cy.visit(this.baseUrl);
+        cy.visit('/');
         cy.get(this.loginLink).click();
     }
 

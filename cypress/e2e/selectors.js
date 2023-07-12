@@ -12,6 +12,12 @@ const selectors = {
     header: {
       createOrderLink: "header[id='header'] li:nth-child(1) a:nth-child(1)",
       logo:'header .logo-link'
+    },
+
+    cabinet: {
+      createOrderContainer: ".modal-content-container",
+      containerTitle: "div[class='white-block modal-block default-modal'] div[class='title']",
+      addForAll: "a[href='/cabinet/AddForAll']"
     }
 }
   
