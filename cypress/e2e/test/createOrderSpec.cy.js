@@ -1,15 +1,32 @@
 /// <reference types="cypress"/>
 
-import basePage from '../pageObject/basePage.js';
+import header from '../pageObject/header.js';
+import cabinet from '../pageObject/cabinet.js';
 
-describe('create order', () => {
+describe('Create Order', () => {
+  let userData;
+  let data;
 
-    beforeEach(() => {
-    cy.login()
-    cy.visit('/')
-})
-  
-    it('Create order', ()=> {
-    cy.title().should('contain', 'Мои заказы')
-    })
-})
+  before(() => {
+    cy.fixture('data.json').then((fixtureData) => {
+      userData = fixtureData.userData;
+      data = fixtureData;
+    });
+  });
+
+  beforeEach(() => {
+    cy.login(userData.userPhone, userData.password);
+    cy.visit('/');
+    cy.title().should('contain', data.title);
+  });
+
+  it('should display create order container', () => {
+    const containerTitle = data.containerTitle;
+
+    header.clickCreateOrderLink();
+    cabinet.getTitle().should('have.text', containerTitle);
+
+    cabinet.clickAddForAll()
+    cy.url().should('contain', 'AddForAll')
+  });
+});
