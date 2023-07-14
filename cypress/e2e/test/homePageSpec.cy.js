@@ -1,8 +1,5 @@
 /// <reference types="cypress"/>
-const fixtures = require('../../fixtures/data');
 import basePage from '../pageObject/basePage.js';
-
-const data = fixtures.data;
 
 describe('UI login', () => {
     let userData;
@@ -17,7 +14,7 @@ describe('UI login', () => {
   
     it('UI login', ()=> {
         basePage.openLoginPage();
-        basePage.login();
+        basePage.login(userData.userPhone, userData.password);
         cy.title().should('contain', data.title)
     })
 })
