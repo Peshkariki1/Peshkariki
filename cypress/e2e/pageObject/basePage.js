@@ -1,12 +1,9 @@
 /// <reference types="cypress" />
 
 import selectors from '../selectors';
-const fixtures = require('../../fixtures/data');
 
 class BasePage {
     constructor() {
-      // Инициализация объекта basePage
-      // Например, инициализация переменных, настройка окружения и т.д.
       this.loginLink = selectors.homePage.loginLink;
       this.userPhone = selectors.loginPage.userPhone;
       this.passwordInput = selectors.loginPage.passwordInput;
@@ -17,9 +14,9 @@ class BasePage {
         cy.get(this.loginLink).click();
     }
 
-    login() {
-        cy.get(this.userPhone).type('79990000007');
-        cy.get(this.passwordInput).type('123456');
+    login(phone, password) {
+        cy.get(this.userPhone).type(phone);
+        cy.get(this.passwordInput).type(password);
         cy.get(this.loginButton).click()
     }
 }

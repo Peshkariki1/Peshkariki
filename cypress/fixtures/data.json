@@ -4,5 +4,17 @@
   "password": "123456"
   },
   "title" : "Мои заказы", 
-  "containerTitle": "Выберите тип заказа"
+  "containerTitle": "Выберите тип заказа",
+
+  "senderData" : {
+    "cyrillicAddress1": "ул Тверская, д.1",
+    "entrance": "8",
+    "floor": "1",
+    "apt": "111",
+    "phoneNumber": "8999888888",
+    "pickupDate": "18 июля",
+    "pickupTimeFrom": "03:30",
+    "pickupTimeTo": "23:30",
+    "sendername": "Irvin"
+  }
 }

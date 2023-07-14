@@ -2,6 +2,7 @@
 
 import header from '../pageObject/header.js';
 import cabinet from '../pageObject/cabinet.js';
+import addForAll from '../pageObject/addForAll.js';
 
 describe('Create Order', () => {
   let userData;
@@ -29,4 +30,8 @@ describe('Create Order', () => {
     cabinet.clickAddForAll()
     cy.url().should('contain', 'AddForAll')
   });
+
+  it('fill in sender data', () => {
+    addForAll.fillInSenderData(data.senderData.cyrillicAddress1, data.senderData.entrance, data.senderData.floor, data.senderData.apt, data.senderData.phoneNumber, data.senderData.pickupDate, data.senderData.pickupTimeFrom, data.senderData.pickupTimeTo)
+  })
 });
