@@ -32,9 +32,10 @@
 
     "orderDatails": {
       "itemName": "Цветы",
-      "value": "1000", 
-      "weight": "До 1 кг",
-      "amount": "2"
+
+      "value": "100", 
+      "weight": "До 0.5 кг",
+      "amount": "1"
     },
 
     "successMsg": "создан!"
