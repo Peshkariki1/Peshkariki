@@ -5,33 +5,65 @@ import cabinet from '../pageObject/cabinet.js';
 import addForAll from '../pageObject/addForAll.js';
 
 describe('Create Order', () => {
-  let userData;
   let data;
 
   before(() => {
     cy.fixture('data.json').then((fixtureData) => {
-      userData = fixtureData.userData;
       data = fixtureData;
     });
   });
 
   beforeEach(() => {
-    cy.login(userData.userPhone, userData.password);
+    cy.login(data.userData.userPhone, data.userData.password);
     cy.visit('/');
     cy.title().should('contain', data.title);
   });
 
   it('should display create order container', () => {
-    const containerTitle = data.containerTitle;
-
+   
     header.clickCreateOrderLink();
-    cabinet.getTitle().should('have.text', containerTitle);
+    cabinet.getTitle().should('have.text', data.containerTitle);
 
     cabinet.clickAddForAll()
     cy.url().should('contain', 'AddForAll')
   });
 
-  it('fill in sender data', () => {
-    addForAll.fillInSenderData(data.senderData.cyrillicAddress1, data.senderData.entrance, data.senderData.floor, data.senderData.apt, data.senderData.phoneNumber, data.senderData.pickupDate, data.senderData.pickupTimeFrom, data.senderData.pickupTimeTo)
+  it('fill in form', () => {
+    const { senderData, recipientData, orderDatails} = data;
+    addForAll.navigateToAddForAllPage()
+    addForAll.fillInSenderData(
+      senderData.cyrillicAddress1,
+      senderData.entrance,
+      senderData.floor,
+      senderData.apt,
+      senderData.phoneNumber,
+      senderData.pickupDate,
+      senderData.pickupTimeFrom,
+      senderData.pickupTimeTo
+      )
+    addForAll.fillInRecipientData(
+      recipientData.cyrillicAddress1,
+      recipientData.entrance,
+      recipientData.floor,
+      recipientData.apt,
+      recipientData.phoneNumber,
+      recipientData.pickupDate,
+      recipientData.pickupTimeFrom,
+      recipientData.pickupTimeTo
+    )
+    addForAll.addOrderDatails(
+      orderDatails.itemName,
+      orderDatails.value,
+      orderDatails.weight,
+      orderDatails.amount
+    )
+
+    addForAll.selectPaymentMethod()
+
+    addForAll.startOrder()
+
+    addForAll.getSuccessMessage()
+    .should('exist')
+    .and('contain', data.successMsg);
   })
 });

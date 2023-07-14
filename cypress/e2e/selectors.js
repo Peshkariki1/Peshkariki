@@ -31,7 +31,36 @@ const selectors = {
         orderDaySelect: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)',
         orderTimeLeftSelect: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > select:nth-child(2)',
         orderTimeRightSelect: "div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > select:nth-child(2)"
-      }
+      },
+      recipient: {
+        streetAdress: '[placeholder="Марата, д 53"]',
+        addressDropdown: '.address-dropdown', 
+        entrance: "div[class='order-block__animation-wrapper'] input[placeholder='Подъезд']",
+        floor: "div[class='order-block__animation-wrapper'] input[placeholder='Подъезд']",
+        apt: "div[class='order-block__animation-wrapper'] div[class='order-input apartment'] input",
+        phoneNumberInput: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='phone-input-wrapper'] input",
+        orderDaySelect: "body > div:nth-child(7) > div:nth-child(2) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > section:nth-child(1) > div:nth-child(1) > span:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)",
+        orderTimeLeftSelect: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='order-input time-from'] select[name='time']",
+        orderTimeRightSelect: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='order-input time-to'] select[name='time']"
+      },
+
+      orderDetails: {
+        itemName: "input[placeholder='Что везем']",
+        value: "input[placeholder='Ценность за шт.']", 
+        selectWeight: "select[name='weight']",
+        inputAmount: "div[class='input-group input-group-right'] input[type='number']",
+      },
+      paymentMethods: {
+        type1: ":nth-child(1) > #chosenPaymentMethod",
+        type2: ":nth-child(2) > #chosenPaymentMethod",
+        type3: ":nth-child(3) > #chosenPaymentMethod",
+        type4: ":nth-child(4) > #chosenPaymentMethod",
+        type5: ":nth-child(5) > #chosenPaymentMethod"
+      },
+
+      buttonStartOrder: "button[class='start'] div",
+
+      successMsg: ".modal-title"
     }
 }
   
