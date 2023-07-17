@@ -60,7 +60,22 @@ const selectors = {
 
       buttonStartOrder: "button[class='start'] div",
 
-      successMsg: ".modal-title"
+      successMsg: ".modal-title", 
+
+      afterOrdered: {
+        option1: "#checkbox0",
+        option2: "#checkbox1",
+        option3: "#checkbox2",
+        option4: "#checkbox3",
+        option5: "#checkbox1",
+        closePopup: ".close",
+        apply: ".apply"
+      }
+    },
+
+    orderList: {
+      order: ".order",
+      orderNumber: ".left-header"
     }
 }
   

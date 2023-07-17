@@ -19,8 +19,7 @@ describe('Create Order', () => {
     cy.title().should('contain', data.title);
   });
 
-  it('should display create order container', () => {
-   
+  it('should display create order container', () => {   
     header.clickCreateOrderLink();
     cabinet.getTitle().should('have.text', data.containerTitle);
 
@@ -40,7 +39,7 @@ describe('Create Order', () => {
       senderData.pickupDate,
       senderData.pickupTimeFrom,
       senderData.pickupTimeTo
-      )
+    )
     addForAll.fillInRecipientData(
       recipientData.cyrillicAddress1,
       recipientData.entrance,
@@ -63,7 +62,13 @@ describe('Create Order', () => {
     addForAll.startOrder()
 
     addForAll.getSuccessMessage()
-    .should('exist')
-    .and('contain', data.successMsg);
-  })
+      .should('exist')
+      .and('contain', data.successMsg);
+
+      addForAll.invokeOrderNumber().then((orderNumber) => {
+        cy.writeFile('orderNumber.txt', orderNumber);
+
+    });
+  });
 });
+

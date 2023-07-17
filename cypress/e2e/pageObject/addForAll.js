@@ -34,6 +34,7 @@ class AddForAll {
     this.buttonStartOrder = selectors.addForAll.buttonStartOrder,
 
     this.successMsg = selectors.addForAll.successMsg;
+    this.closePopup = selectors.addForAll.closePopup;
   }
 
   navigateToAddForAllPage() {
@@ -82,6 +83,17 @@ class AddForAll {
 
   getSuccessMessage() {
     return cy.get(this.successMsg);
+  }
+
+  closePopUp() {
+    cy.get(this.closePopUp).click()
+  }
+
+  invokeOrderNumber() {
+    return cy.contains('Заказ').invoke('text').then((text) => {
+      const orderNumber = text.match(/\d+/)[0];
+      return orderNumber;
+    })
   }
 }
 
