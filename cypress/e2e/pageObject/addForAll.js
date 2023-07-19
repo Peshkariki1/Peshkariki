@@ -5,40 +5,45 @@ import selectors from '../selectors';
 class AddForAll {
   constructor() {
     const { sender, recipient, orderDetails, paymentMethods} = selectors.addForAll;
-    this.senderStreetAdress = sender.streetAdress;
-    this.senderAddressDropdown = sender.addressDropdown;
-    this.senderEntrance = sender.entrance;
-    this.senderFloor = sender.floor;
-    this.senderApt = sender.apt;
-    this.senderPhoneNumberInput = sender.phoneNumberInput;
-    this.senderOrderDaySelect = sender.orderDaySelect;
-    this.senderOrderTimeLeftSelect = sender.orderTimeLeftSelect;
-    this.senderOrderTimeRightSelect = sender.orderTimeRightSelect;
+    this.senderStreetAdress = sender.STREET_ADRESS;
+    this.senderAddressDropdown = sender.ADRESS_DROPDOWN;
+    this.senderEntrance = sender.ENTRANCE;
+    this.senderFloor = sender.FLOOR;
+    this.senderApt = sender.APT;
+    this.senderPhoneNumberInput = sender.PHONE_NUMBER_INPUT;
+    this.senderOrderDaySelect = sender.ORDER_DAY_SELECT;
+    this.senderOrderTimeLeftSelect = sender.ORDER_TIME_LEFT_SELECT;
+    this.senderOrderTimeRightSelect = sender.ORDER_TIME_RIGHT_SELECT;
 
-    this.recipientStreetAdress = recipient.streetAdress;
-    this.recipientAddressDropdown = recipient.addressDropdown;
-    this.recipientEntrance = recipient.entrance;
-    this.recipientFloor = recipient.floor;
-    this.recipientApt = recipient.apt;
-    this.recipientPhoneNumberInput = recipient.phoneNumberInput;
-    this.recipientOrderDaySelect = recipient.orderDaySelect;
-    this.recipientOrderTimeLeftSelect = recipient.orderTimeLeftSelect;
-    this.recipientOrderTimeRightSelect = recipient.orderTimeRightSelect;
+    this.recipientStreetAdress = recipient.STREET_ADRESS;
+    this.recipientAddressDropdown = recipient.ADRESS_DROPDOWN;
+    this.recipientEntrance = recipient.ENTRANCE;
+    this.recipientFloor = recipient.FLOOR;
+    this.recipientApt = recipient.APT;
+    this.recipientPhoneNumberInput = recipient.PHONE_NUMBER_INPUT;
+    this.recipientOrderDaySelect = recipient.ORDER_DAY_SELECT;
+    this.recipientOrderTimeLeftSelect = recipient.ORDER_TIME_LEFT_SELECT;
+    this.recipientOrderTimeRightSelect = recipient.ORDER_TIME_RIGHT_SELECT;
 
-    this.itemName = orderDetails.itemName;
-    this.value = orderDetails.value;
-    this.selectWeight = orderDetails.selectWeight;
-    this.inputAmount = orderDetails.inputAmount;
-    this.paymentMethod = paymentMethods.type1;
+    this.itemName = orderDetails.ITEM_NAME;
+    this.value = orderDetails.VALUE;
+    this.selectWeight = orderDetails.SELECT_WEIGHT;
+    this.inputAmount = orderDetails.INPUT_AMOUNT;
+    this.paymentMethod = paymentMethods.TYPE_1;
 
-    this.buttonStartOrder = selectors.addForAll.buttonStartOrder,
+    this.buttonStartOrder = selectors.addForAll.START_ORDER_BUTTON,
 
-    this.successMsg = selectors.addForAll.successMsg;
-    this.closePopup = selectors.addForAll.closePopup;
+    this.successMsg = selectors.addForAll.SUCCESS_MSG;
+    this.closePopup = selectors.addForAll.afterOrdered.CLOSE_POPUP;
+    this.selectRegion = selectors.addForAll.SELECT_REGION
   }
 
   navigateToAddForAllPage() {
     cy.visit('https://alt10.peshkariki.ru/cabinet/AddForAll');
+  }
+
+  selectingRegion(option){
+    cy.get(this.selectRegion).select(option)
   }
 
   fillInSenderData(address1, entrance, floor, apt, phoneNumber, orderDay, orderTimeFrom, orderTimeTo) {

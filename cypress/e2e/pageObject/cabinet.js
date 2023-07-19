@@ -4,9 +4,9 @@ const selectors = require('../selectors');
 
 class Cabinet {
   constructor() {
-    this.createOrderContainerSelector = selectors.cabinet.createOrderContainer;
-    this.containerTitleSelector = selectors.cabinet.containerTitle;
-    this.addForAll = selectors.cabinet.addForAll;
+    this.createOrderContainerSelector = selectors.cabinet.CREATE_ORDER_CONTAINER;
+    this.containerTitleSelector = selectors.cabinet.CONTAINER_TITLE;
+    this.addForAll = selectors.cabinet.ADD_FOR_ALL;
   }
 
   getCreateOrderContainer() {

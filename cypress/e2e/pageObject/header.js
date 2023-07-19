@@ -2,8 +2,8 @@ const selectors = require('../selectors');
 
 class Header {
   constructor() {
-    this.logo = selectors.header.logo;
-    this.createOrderLink = selectors.header.createOrderLink
+    this.logo = selectors.header.LOGO;
+    this.createOrderLink = selectors.header.CREATE_ORDER_LINK;
   }
 
   getLogo() {

@@ -4,8 +4,9 @@ import selectors from '../selectors';
 
 class OrderList {
   constructor() {
-    this.order = selectors.orderList.order;
-    this.orderNumber = selectors.orderList.orderNumber;
+
+    this.order = selectors.orderList.ORDER;
+    this.orderNumber = selectors.orderList.ORDER_NUMBER;
     this.cancelOrderButton = selectors.orderList.CANCEL_ORDER_BUTTON;
     this.cancelReason = selectors.orderList.REASON_ORDER_CANCELATION;
     this.submitOrderCancellationButton = selectors.orderList.SUBMIT_ORDER_CANCELATION
@@ -33,7 +34,15 @@ class OrderList {
   }
 
   findOrderWithNumber(orderNumber) {
-    cy.get(this.orderNumber).contains(orderNumber);
+
+    cy.get(this.orderNumber).contains(orderNumber)
+  }
+
+  cancelOrder(orderNumber) {
+    cy.get(this.order).contains(orderNumber)
+      .then((order) => {
+        cy.wrap(order).find(this.cancelOrderButton).click();
+    });
   }
 
   submitOrderCancellation() {

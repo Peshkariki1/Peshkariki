@@ -1,19 +1,15 @@
-const header = require('../pageObject/header');
-const basePage = require('../pageObject/basePage');
+/// <reference types="cypress"/>
+
+import header from '../pageObject/header.js';
+import { data } from '../../fixtures/orderData.json'
 
 describe('Header', () => {
-  let userData;
-  let data;
 
   before(() => {
-    cy.fixture('data.json').then((fixtureData) => {
-      userData = fixtureData.userData;
-      data = fixtureData;
-    });
   });
 
   beforeEach(() => {
-    cy.login(userData.userPhone, userData.password);
+    cy.login(data.userData.userPhone, data.userData.password);
     cy.visit('/');
     cy.title().should('contain', data.title);
   });

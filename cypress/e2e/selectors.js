@@ -1,82 +1,83 @@
 const selectors = {
     homePage: {
-      loginLink: "ul[class='navigation-list'] a[class='btn-modal']",
+      LOGIN_LINK: "ul[class='navigation-list'] a[class='btn-modal']",
     },
 
     loginPage: {
-      userPhone: '[name="phone"]',
-      passwordInput: '[name="password"]',
-      loginButton: "button[class='send btn-single']",
+      USER_PHONE_INPUT: '[name="phone"]',
+      PASSWORD_INPUT: '[name="password"]',
+      LOGIN_BUTTON: "button[class='send btn-single']",
     },
 
     header: {
-      createOrderLink: "header[id='header'] li:nth-child(1) a:nth-child(1)",
-      logo:'header .logo-link'
+      CREATE_ORDER_LINK: "header[id='header'] li:nth-child(1) a:nth-child(1)",
+      LOGO:'header .logo-link'
     },
 
     cabinet: {
-      createOrderContainer: ".modal-content-container",
-      containerTitle: "div[class='white-block modal-block default-modal'] div[class='title']",
-      addForAll: "a[href='/cabinet/AddForAll']"
+      CREATE_ORDER_CONTAINER: ".modal-content-container",
+      CONTAINER_TITLE: "div[class='white-block modal-block default-modal'] div[class='title']",
+      ADD_FOR_ALL: "a[href='/cabinet/AddForAll']"
     },
 
     addForAll: {
+      SELECT_REGION: "div[class='select-city'] select",
       sender: {
-        streetAdress: '[placeholder="Невский проспект, д 28"]',
-        addressDropdown: '.address-dropdown',
-        entrance: '[placeholder="Подъезд"]',
-        floor: '[placeholder="Этаж"]',
-        apt: '[placeholder="Кв./офис"]',
-        phoneNumberInput: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) input[type="tel"]',
-        orderDaySelect: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)',
-        orderTimeLeftSelect: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > select:nth-child(2)',
-        orderTimeRightSelect: "div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > select:nth-child(2)"
+        STREET_ADRESS: 'div:nth-child(1) > div:nth-child(1) > section:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) input',
+        ADRESS_DROPDOWN: '.address-dropdown',
+        ENTRANCE: '[placeholder="Подъезд"]',
+        FLOOR: '[placeholder="Этаж"]',
+        APT: '[placeholder="Кв./офис"]',
+        PHONE_NUMBER_INPUT: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) input[type="tel"]',
+        ORDER_DAY_SELECT: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)',
+        ORDER_TIME_LEFT_SELECT: 'div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > select:nth-child(2)',
+        ORDER_TIME_RIGHT_SELECT: "div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > select:nth-child(2)"
       },
       recipient: {
-        streetAdress: '[placeholder="Марата, д 53"]',
-        addressDropdown: '.address-dropdown', 
-        entrance: "div[class='order-block__animation-wrapper'] input[placeholder='Подъезд']",
-        floor: "div[class='order-block__animation-wrapper'] input[placeholder='Подъезд']",
-        apt: "div[class='order-block__animation-wrapper'] div[class='order-input apartment'] input",
-        phoneNumberInput: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='phone-input-wrapper'] input",
-        orderDaySelect: "body > div:nth-child(7) > div:nth-child(2) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > section:nth-child(1) > div:nth-child(1) > span:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)",
-        orderTimeLeftSelect: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='order-input time-from'] select[name='time']",
-        orderTimeRightSelect: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='order-input time-to'] select[name='time']"
+        STREET_ADRESS: "div[class='order-block__animation-wrapper'] div[class='input address'] input",
+        ADRESS_DROPDOWN: '.address-dropdown', 
+        ENTRANCE: "div[class='order-block__animation-wrapper'] input[placeholder='Подъезд']",
+        FLOOR: "div[class='order-block__animation-wrapper'] input[placeholder='Подъезд']",
+        APT: "div[class='order-block__animation-wrapper'] div[class='order-input apartment'] input",
+        PHONE_NUMBER_INPUT: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='phone-input-wrapper'] input",
+        ORDER_DAY_SELECT: "body > div:nth-child(7) > div:nth-child(2) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > section:nth-child(1) > div:nth-child(1) > span:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)",
+        ORDER_TIME_LEFT_SELECT: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='order-input time-from'] select[name='time']",
+        ORDER_TIME_RIGHT_SELECT: "div[class='order-block__animation-wrapper'] div[class='order-block'] div[class='expand-block'] div[class='block'] div[class='sender-info'] div div[class='order-input time-to'] select[name='time']"
       },
 
       orderDetails: {
-        itemName: "input[placeholder='Что везем']",
-        value: "input[placeholder='Ценность за шт.']", 
-        selectWeight: "select[name='weight']",
-        inputAmount: "div[class='input-group input-group-right'] input[type='number']",
+        ITEM_NAME: "input[placeholder='Что везем']",
+        VALUE: "input[placeholder='Ценность за шт.']", 
+        SELECT_WEIGHT: "select[name='weight']",
+        INPUT_AMOUNT: "div[class='input-group input-group-right'] input[type='number']",
       },
       paymentMethods: {
-        type1: ":nth-child(1) > #chosenPaymentMethod",
-        type2: ":nth-child(2) > #chosenPaymentMethod",
-        type3: ":nth-child(3) > #chosenPaymentMethod",
-        type4: ":nth-child(4) > #chosenPaymentMethod",
-        type5: ":nth-child(5) > #chosenPaymentMethod"
+        TYPE_1: ":nth-child(1) > #chosenPaymentMethod",
+        TYPE_2: ":nth-child(2) > #chosenPaymentMethod",
+        TYPE_3: ":nth-child(3) > #chosenPaymentMethod",
+        TYPE_4: ":nth-child(4) > #chosenPaymentMethod",
+        TYPE_5: ":nth-child(5) > #chosenPaymentMethod"
       },
 
-      buttonStartOrder: "button[class='start'] div",
+      START_ORDER_BUTTON: "button[class='start'] div",
 
-      successMsg: ".modal-title", 
+      SUCCESS_MSG: ".modal-title", 
 
       afterOrdered: {
-        option1: "#checkbox0",
-        option2: "#checkbox1",
-        option3: "#checkbox2",
-        option4: "#checkbox3",
-        option5: "#checkbox1",
-        closePopup: ".close",
-        apply: ".apply"
+        OPTION_1: "#checkbox0",
+        OPTION_2: "#checkbox1",
+        OPTION_3: "#checkbox2",
+        OPTION_4: "#checkbox3",
+        OPTION_5: "#checkbox1",
+        CLOSE_POPUP: ".close",
+        APPLY: ".apply"
       }
     },
 
     orderList: {
-      order: ".order",
-      orderNumber: ".left-header",
-      CANCEL_ORDER_BUTTON: ".order .delivery-data .order-data .actions",
+      ORDER: ".order",
+      ORDER_NUMBER: ".left-header",
+      CANCEL_ORDER_BUTTON: ".order-data .order-action.transrarent",
       REASON_ORDER_CANCELATION: '[value="Получатель отказался от заказа"]',
       SUBMIT_ORDER_CANCELATION: '.black',
       ORDER_COUNT: "div[class='title'] div span[class='red']"

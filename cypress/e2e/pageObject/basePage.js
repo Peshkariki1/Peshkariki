@@ -4,10 +4,10 @@ import selectors from '../selectors';
 
 class BasePage {
     constructor() {
-      this.loginLink = selectors.homePage.loginLink;
-      this.userPhone = selectors.loginPage.userPhone;
-      this.passwordInput = selectors.loginPage.passwordInput;
-      this.loginButton = selectors.loginPage.loginButton;
+      this.loginLink = selectors.homePage.LOGIN_LINK;
+      this.userPhone = selectors.loginPage.USER_PHONE_INPUT;
+      this.passwordInput = selectors.loginPage.PASSWORD_INPUT;
+      this.loginButton = selectors.loginPage.LOGIN_BUTTON;
     }
     openLoginPage() {
         cy.visit('/');

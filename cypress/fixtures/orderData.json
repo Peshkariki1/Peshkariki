@@ -1,0 +1,78 @@
+{
+"data": {
+    "orderData": [
+        {
+    "region":"2",
+    "senderData" : {
+    "cyrillicAddress1": "ул Тверская, д.1",
+    "entrance": "8",
+    "floor": "1",
+    "apt": "111",
+    "phoneNumber": "8999888888",
+    "pickupDate": "21 июля",
+    "pickupTimeFrom": "03:30",
+    "pickupTimeTo": "23:30",
+    "sendername": "Irvin"
+    },
+    "recipientData" : {
+      "cyrillicAddress1": "Марата д.1",
+      "entrance": "1",
+      "floor": "11",
+      "apt": "1111",
+      "phoneNumber": "8999888889",
+      "pickupDate": "22 июля",
+      "pickupTimeFrom": "03:30",
+      "pickupTimeTo": "23:30",
+      "sendername": "John"
+      },
+    "orderDetails": {
+      "itemName": "Цветы",
+      "value": "100", 
+      "weight": "До 1 кг",
+      "amount": "1"
+    },
+    "successMsg": "создан!",
+    "containerTitle": "Выберите тип заказа"
+    },
+    {
+      "region":"1",
+        "senderData" : {
+        "cyrillicAddress1": "ул Волхонка, д",
+        "entrance": "2",
+        "floor": "22",
+        "apt": "222",
+        "phoneNumber": "8999888810",
+        "pickupDate": "25 июля",
+        "pickupTimeFrom": "Неважно",
+        "pickupTimeTo": "Неважно",
+        "sendername": "Nura"
+        },
+        "recipientData" : {
+          "cyrillicAddress1": "ул Манежная, д 7",
+          "entrance": "100",
+          "floor": "1000",
+          "apt": "11111",
+          "phoneNumber": "8999888822",
+          "pickupDate": "25 июля",
+          "pickupTimeFrom": "Неважно",
+          "pickupTimeTo": "23:30",
+          "sendername": "Anastasia"
+          },
+        "orderDetails": {
+          "itemName": "Документы",
+          "value": "500", 
+          "weight": "500",
+          "amount": "30"
+        },
+        "successMsg": "создан!",
+        "containerTitle": "Выберите тип заказа"
+        }
+    ],
+    "userData": {
+      "userPhone": "79990000007",
+      "password": "123456"
+      },
+      "title" : "Мои заказы", 
+      "containerTitle": "Выберите тип заказа"
+}
+}

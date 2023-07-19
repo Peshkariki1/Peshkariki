@@ -1,14 +1,12 @@
 /// <reference types="cypress"/>
 
 import orderList from '../pageObject/ordersList.js';
+import { data } from '../../fixtures/orderData.json'
 
 describe('Orders Test', () => {
-  let data;
 
   before(() => {
-    cy.fixture('data.json').then((fixtureData) => {
-      data = fixtureData;
-    });
+
   });
 
   beforeEach(() => {
