@@ -3,9 +3,13 @@
 import header from '../pageObject/header.js';
 import cabinet from '../pageObject/cabinet.js';
 import addForAll from '../pageObject/addForAll.js';
+import orderList from '../pageObject/ordersList.js';
 
 describe('Create Order', () => {
   let data;
+  let orderNumber;
+  let initialCount;
+  let textAsNumber;
 
   before(() => {
     cy.fixture('data.json').then((fixtureData) => {
@@ -27,8 +31,21 @@ describe('Create Order', () => {
     cy.url().should('contain', 'AddForAll')
   });
 
+  it('Check order count before creating a new order', () => {
+    orderList.navigateToOrderListPage();
+    orderList.findAllOrders().then((orders) => {
+      initialCount = orders.length;
+  
+      orderList.verifyOrderCount().then((count) => {
+        textAsNumber = count;
+  
+        expect(textAsNumber).to.equal(initialCount);
+      })
+    });
+  });
+
   it('fill in form', () => {
-    const { senderData, recipientData, orderDatails} = data;
+    const { senderData, recipientData, orderDetails } = data;
     addForAll.navigateToAddForAllPage()
     addForAll.fillInSenderData(
       senderData.cyrillicAddress1,
@@ -51,10 +68,10 @@ describe('Create Order', () => {
       recipientData.pickupTimeTo
     )
     addForAll.addOrderDatails(
-      orderDatails.itemName,
-      orderDatails.value,
-      orderDatails.weight,
-      orderDatails.amount
+      orderDetails.itemName,
+      orderDetails.value,
+      orderDetails.weight,
+      orderDetails.amount
     )
 
     addForAll.selectPaymentMethod()
@@ -65,10 +82,32 @@ describe('Create Order', () => {
       .should('exist')
       .and('contain', data.successMsg);
 
-      addForAll.invokeOrderNumber().then((orderNumber) => {
-        cy.writeFile('orderNumber.txt', orderNumber);
-
+      addForAll.invokeOrderNumber().then((orderNum) => {
+        orderNumber = orderNum;
+      });
     });
-  });
-});
+   
+    it('Find order', () => {
+      orderList.navigateToOrderListPage();
+      orderList.findOrderWithNumber(orderNumber);
+    }); 
+  
+    it('Check order count after creating a new order', () => {
+      orderList.navigateToOrderListPage();
+      orderList.findAllOrders().should('have.length', initialCount + 1);
+      orderList.findAllOrders().then((orders) => {
+        let newCount = orders.length;
+    
+        orderList.verifyOrderCount().then((count) => {
+          textAsNumber = count;
+    
+          expect(textAsNumber).to.equal(newCount);
+        })
+      });
+    });
+
+    it('Manage Order', () => {
+      orderList.manadgeOrder(orderNumber)
+    })
+})
 

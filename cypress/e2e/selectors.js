@@ -75,7 +75,11 @@ const selectors = {
 
     orderList: {
       order: ".order",
-      orderNumber: ".left-header"
+      orderNumber: ".left-header",
+      CANCEL_ORDER_BUTTON: ".order .delivery-data .order-data .actions",
+      REASON_ORDER_CANCELATION: '[value="Получатель отказался от заказа"]',
+      SUBMIT_ORDER_CANCELATION: '.black',
+      ORDER_COUNT: "div[class='title'] div span[class='red']"
     }
 }
   

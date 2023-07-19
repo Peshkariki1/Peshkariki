@@ -16,11 +16,4 @@ describe('Orders Test', () => {
     cy.visit('/');
     cy.title().should('contain', data.title);
   });
-
-  it('Find order', () => {
-    orderList.navigateToOrderListPage();
-    cy.readFile('orderNumber.txt').then((orderNumber) => {
-        orderList.findOrderWithNumber(orderNumber);
-    });
-   })
 })
