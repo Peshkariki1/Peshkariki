@@ -9,7 +9,7 @@
     "floor": "1",
     "apt": "111",
     "phoneNumber": "8999888888",
-    "pickupDate": "21 июля",
+    "pickupDate": 1,
     "pickupTimeFrom": "03:30",
     "pickupTimeTo": "23:30",
     "sendername": "Irvin"
@@ -20,7 +20,7 @@
       "floor": "11",
       "apt": "1111",
       "phoneNumber": "8999888889",
-      "pickupDate": "22 июля",
+      "pickupDate": 2,
       "pickupTimeFrom": "03:30",
       "pickupTimeTo": "23:30",
       "sendername": "John"
@@ -42,7 +42,7 @@
         "floor": "22",
         "apt": "222",
         "phoneNumber": "8999888810",
-        "pickupDate": "25 июля",
+        "pickupDate": 6,
         "pickupTimeFrom": "Неважно",
         "pickupTimeTo": "Неважно",
         "sendername": "Nura"
@@ -53,7 +53,7 @@
           "floor": "1000",
           "apt": "11111",
           "phoneNumber": "8999888822",
-          "pickupDate": "25 июля",
+          "pickupDate": 0,
           "pickupTimeFrom": "Неважно",
           "pickupTimeTo": "23:30",
           "sendername": "Anastasia"

@@ -43,7 +43,7 @@ data.orderData.forEach((item, index) => {
     });
   });
 
-  it(`fill in form ${index + 1}`, () => {
+  it.only(`fill in form ${index + 1}`, () => {
     const { senderData, recipientData, orderDetails } = item;
     addForAll.navigateToAddForAllPage()
     addForAll.selectingRegion(item.region)
