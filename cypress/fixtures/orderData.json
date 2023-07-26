@@ -5,7 +5,7 @@
     "deliveryTypeToClick": "BY_FOOT", 
     "region": "1",
     "senderData" :{
-    "cyrillicAddress1": "г Москва, ул Дмитровка Б., 6",
+    "cyrillicAddress1": "г Москва, ул Дмитровка Б., д 6 ",
     "entrance": "8",
     "floor": "1",
     "apt": "111",
@@ -93,11 +93,6 @@
         "containerTitle": "Выберите тип заказа"
         }
     ],
-
-    "userData": {
-      "userPhone": "79990000007",
-      "password": "123456"
-      },
       "title" : "Мои заказы", 
       "containerTitle": "Выберите тип заказа"
     }

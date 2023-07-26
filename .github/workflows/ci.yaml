@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
     - name: Git clone
@@ -28,6 +28,10 @@ jobs:
 
     - name: Npx run
       run: npx cypress run --headless
+
+      env:
+        USER_PHONE: ${{ secrets.USER_PHONE }}
+        PASSWORD: ${{secrets.PASSWORD}}
 
     - name: Create test summary
       uses: test-summary/action@v2.0

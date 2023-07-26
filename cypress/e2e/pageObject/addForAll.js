@@ -57,11 +57,23 @@ class AddForAll {
   };
 
   fillInSenderData(address, entrance, floor, apt, phoneNumber, orderDay, orderTimeFrom, orderTimeTo) {
-    cy.get(this.senderStreetAddress).clear().type(address).then(()=> {
-      cy.get(this.senderAddressDropdown).first().click();
-    })
-  
+   // Используем асинхронную функцию для использования await
+  cy.get(this.senderStreetAddress)
+    .clear()
+    .type(address)
+    .wait(2000);
+
+  cy.get(this.senderAddressDropdown)
+    .first()
+    .then((dropdown) => {
+      if (Cypress.dom.isVisible(dropdown)) {
+    // Если выпадающее меню видимо, кликаем на первый элемент
+      cy.wrap(dropdown).click();
+  } else {
+    // Если выпадающее меню не видимо, используем значение entrance
     cy.get(this.senderEntrance).type(entrance);
+  }
+});
     cy.get(this.senderFloor).clear().type(floor);
     cy.get(this.senderApt).clear().type(apt);
     cy.get(this.senderPhoneNumberInput).clear().type(phoneNumber);

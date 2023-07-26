@@ -10,8 +10,8 @@ describe('Orders Test', () => {
   });
 
   beforeEach(() => {
-    const userPhone = Cypress.env('userData').userPhone;
-    const password = Cypress.env('userData').password;
+    const userPhone = Cypress.env('USER_PHONE');
+    const password = Cypress.env('PASSWORD');
     
     cy.login(userPhone, password);
     cy.visit('/');
