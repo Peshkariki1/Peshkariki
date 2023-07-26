@@ -2,9 +2,10 @@
 "data": {
     "orderData": [
         {
-    "region":"2",
-    "senderData" : {
-    "cyrillicAddress1": "ул Тверская, д.1",
+    "deliveryTypeToClick": "BY_FOOT", 
+    "region": "1",
+    "senderData" :{
+    "cyrillicAddress1": "г Москва, ул Дмитровка Б., 6",
     "entrance": "8",
     "floor": "1",
     "apt": "111",
@@ -12,10 +13,10 @@
     "pickupDate": 1,
     "pickupTimeFrom": "03:30",
     "pickupTimeTo": "23:30",
-    "sendername": "Irvin"
+    "sendername":" максим***/////548369043"
     },
-    "recipientData" : {
-      "cyrillicAddress1": "Марата д.1",
+    "recipientData" :{
+      "cyrillicAddress1": "Манежная д 7",
       "entrance": "1",
       "floor": "11",
       "apt": "1111",
@@ -25,30 +26,43 @@
       "pickupTimeTo": "23:30",
       "sendername": "John"
       },
-    "orderDetails": {
-      "itemName": "Цветы",
+    "orderDetails":{
+      "itemName": "Flowers",
       "value": "100", 
       "weight": "До 1 кг",
       "amount": "1"
     },
+    "paymentMethodToClick": "TYPE_1",
+    "selectServiceToClick": "OPTION_2",
+
+    "promocode": "поехали",
+
+    "additionalOptions":{
+      "payment": "1000",
+      "companyName": "Test LLC",
+      "orderNumber": "123456"
+    }, 
+
     "successMsg": "создан!",
     "containerTitle": "Выберите тип заказа"
     },
+
     {
-      "region":"1",
+      "deliveryTypeToClick": "BY_CAR",
+      "region": "2",
         "senderData" : {
-        "cyrillicAddress1": "ул Волхонка, д",
+        "cyrillicAddress1": "Чайковского д 6",
         "entrance": "2",
         "floor": "22",
         "apt": "222",
         "phoneNumber": "8999888810",
-        "pickupDate": 6,
+        "pickupDate": 5,
         "pickupTimeFrom": "Неважно",
         "pickupTimeTo": "Неважно",
         "sendername": "Nura"
         },
         "recipientData" : {
-          "cyrillicAddress1": "ул Манежная, д 7",
+          "cyrillicAddress1": "Таврический переулок 7",
           "entrance": "100",
           "floor": "1000",
           "apt": "11111",
@@ -57,22 +71,34 @@
           "pickupTimeFrom": "Неважно",
           "pickupTimeTo": "23:30",
           "sendername": "Anastasia"
-          },
-        "orderDetails": {
-          "itemName": "Документы",
+        },
+        "orderDetails":{
+          "itemName": "Documentation",
           "value": "500", 
           "weight": "500",
           "amount": "30"
         },
+        "paymentMethodToClick": "TYPE_2",
+        "selectServiceToClick": "OPTION_3",
+
+        "promocode": "ух бля",
+
+        "additionalOptions": {
+          "payment": "0",
+          "companyName": "n/a",
+          "orderNumber": "n/a"
+        }, 
+
         "successMsg": "создан!",
         "containerTitle": "Выберите тип заказа"
         }
     ],
+
     "userData": {
       "userPhone": "79990000007",
       "password": "123456"
       },
       "title" : "Мои заказы", 
       "containerTitle": "Выберите тип заказа"
-}
+    }
 }

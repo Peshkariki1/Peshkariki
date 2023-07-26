@@ -17,15 +17,25 @@ class OrderList {
     cy.visit('https://alt10.peshkariki.ru/cabinet/ordersList/');
   }
 
-  findAllOrders() {
-    for (let i = 0; i < 5; i++) {
-      cy.wait(2000);
-      cy.get('footer').scrollIntoView();
-      cy.wait(2000);
-    }
-    return cy.get(this.order);
-  }
+  findAllOrdersRecursive() {
+    return cy.get(this.orderCount).invoke('text').then((text) => {
+      const numberValue = parseInt(text, 10);
   
+      const checkOrders = () => {
+        return cy.get(this.order).then((orders) => {
+          if (orders.length >= numberValue) {
+            return orders;
+          } else {
+            cy.get('footer').scrollIntoView();
+            cy.wait(2000);
+            return checkOrders();
+          }
+        });
+      };
+      return checkOrders();
+    });
+  }
+ 
   verifyOrderCount() {
       return cy.get(this.orderCount).invoke('text').then((text) => {
       const textAsNumber = parseInt(text, 10);
@@ -34,7 +44,6 @@ class OrderList {
   }
 
   findOrderWithNumber(orderNumber) {
-
     cy.get(this.orderNumber).contains(orderNumber)
   }
 
@@ -52,6 +61,7 @@ class OrderList {
 
   manadgeOrder(orderNumber){
     cy.visit(`https://alt10.peshkariki.ru/cabinet/AddForAll/edit/${orderNumber}`)
+    
   }
   
 }

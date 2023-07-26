@@ -11,9 +11,6 @@ describe('Create Order', () => {
   let initialCount;
   let textAsNumber;
 
-  before(() => {
-    
-  })
 
   beforeEach(() => {
     cy.login(data.userData.userPhone, data.userData.password);
@@ -27,26 +24,26 @@ data.orderData.forEach((item, index) => {
     cabinet.getTitle().should('have.text', item.containerTitle);
 
     cabinet.clickAddForAll()
-    cy.url().should('contain', 'AddForAll')
+    cy.url().should('contain', 'AddForAll');
   });
 
   it(`Check order count before creating a new order ${index + 1}`, () => {
     orderList.navigateToOrderListPage();
-    orderList.findAllOrders().then((orders) => {
-      initialCount = orders.length;
-  
+    orderList.findAllOrdersRecursive().then((initialOrders) => {
+      initialCount = initialOrders.length;
       orderList.verifyOrderCount().then((count) => {
         textAsNumber = count;
-  
         expect(textAsNumber).to.equal(initialCount);
-      })
+      });
     });
   });
+  
+  it(`fill in form ${index + 1}`, () => {
+    const { senderData, recipientData, orderDetails, paymentMethodToClick, selectServiceToClick, deliveryTypeToClick, promocode, additionalOptions} = item;
+    addForAll.navigateToAddForAllPage();
+    addForAll.selectingRegion(item.region);
+    addForAll.selectDeliveryType(deliveryTypeToClick);
 
-  it.only(`fill in form ${index + 1}`, () => {
-    const { senderData, recipientData, orderDetails } = item;
-    addForAll.navigateToAddForAllPage()
-    addForAll.selectingRegion(item.region)
     addForAll.fillInSenderData(
       senderData.cyrillicAddress1,
       senderData.entrance,
@@ -56,7 +53,8 @@ data.orderData.forEach((item, index) => {
       senderData.pickupDate,
       senderData.pickupTimeFrom,
       senderData.pickupTimeTo
-    )
+    );
+
     addForAll.fillInRecipientData(
       recipientData.cyrillicAddress1,
       recipientData.entrance,
@@ -66,23 +64,33 @@ data.orderData.forEach((item, index) => {
       recipientData.pickupDate,
       recipientData.pickupTimeFrom,
       recipientData.pickupTimeTo
-    )
+    );
+
     addForAll.addOrderDatails(
       orderDetails.itemName,
       orderDetails.value,
       orderDetails.weight,
       orderDetails.amount
-    )
+    );
+    
+    addForAll.addPromocode(promocode);
 
-    addForAll.selectPaymentMethod()
+    addForAll.selectPaymentMethod(paymentMethodToClick);
 
-    addForAll.startOrder()
+    addForAll.addAdditionalOptions(
+      additionalOptions.payment, 
+      additionalOptions.companyName, 
+      additionalOptions.orderNumber);
+
+    addForAll.selectService(selectServiceToClick);
+
+    addForAll.startOrder();
 
     addForAll.getSuccessMessage()
       .should('exist')
       .and('contain', item.successMsg);
 
-      addForAll.invokeOrderNumber().then((orderNum) => {
+    addForAll.invokeOrderNumber().then((orderNum) => {
         orderNumber = orderNum;
       });
     });
@@ -94,15 +102,9 @@ data.orderData.forEach((item, index) => {
   
     it(`Check order count after creating a new order ${index + 1}`, () => {
       orderList.navigateToOrderListPage();
-      orderList.findAllOrders().should('have.length', initialCount + 1);
-      orderList.findAllOrders().then((orders) => {
-        let newCount = orders.length;
-    
-        orderList.verifyOrderCount().then((count) => {
-          textAsNumber = count;
-    
-          expect(textAsNumber).to.equal(newCount);
-        })
+      orderList.findAllOrdersRecursive().then((orders) => {
+        const newCount = orders.length;
+        expect(newCount).to.equal(initialCount + 1);
       });
     });
 
@@ -113,6 +115,7 @@ data.orderData.forEach((item, index) => {
 
     it(`Manage Order ${index + 1}`, () => {
       orderList.manadgeOrder(orderNumber)
-    })
-})
-})
+      cy.reload();
+    });
+  });
+});

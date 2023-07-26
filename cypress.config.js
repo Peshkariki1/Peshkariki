@@ -6,7 +6,8 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   defaultCommandTimeout: 7000,
   waitForNavigation: true,
-    reporter: 'cypress-mochawesome-reporter',
+  projectId: "vgwi69",
+  reporter: 'cypress-mochawesome-reporter',
     e2e: {
       baseUrl: 'https://alt10.peshkariki.ru',
       setupNodeEvents(on, config) {

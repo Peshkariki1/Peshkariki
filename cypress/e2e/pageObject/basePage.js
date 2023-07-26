@@ -8,6 +8,7 @@ class BasePage {
       this.userPhone = selectors.loginPage.USER_PHONE_INPUT;
       this.passwordInput = selectors.loginPage.PASSWORD_INPUT;
       this.loginButton = selectors.loginPage.LOGIN_BUTTON;
+      this.errorMsg = selectors.loginPage.ERROR;
     }
     openLoginPage() {
         cy.visit('/');
@@ -18,6 +19,10 @@ class BasePage {
         cy.get(this.userPhone).type(phone);
         cy.get(this.passwordInput).type(password);
         cy.get(this.loginButton).click()
+    }
+
+    getErrorMsg(){
+       return cy.get(this.errorMsg).invoke('text')
     }
 }
   
