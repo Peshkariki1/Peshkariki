@@ -13,7 +13,10 @@ describe('Create Order', () => {
 
 
   beforeEach(() => {
-    cy.login(data.userData.userPhone, data.userData.password);
+    const userPhone = Cypress.env('userData').userPhone;
+    const password = Cypress.env('userData').password;
+
+    cy.login(userPhone, password);
     cy.visit('/');
     cy.title().should('contain', data.title);
   });
