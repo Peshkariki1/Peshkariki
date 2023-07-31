@@ -21,6 +21,11 @@ class BasePage {
         cy.get(this.loginButton).click()
     }
 
+    loginWithCredentials(userPhone, password) {
+        this.openLoginPage();
+        this.login(userPhone, password);
+    }
+
     getErrorMsg(){
        return cy.get(this.errorMsg).invoke('text')
     }

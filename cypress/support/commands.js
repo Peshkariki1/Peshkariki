@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 const URL_API = 'https://alt10.peshkariki.ru';
+const basePage = 'https://alt10.peshkariki.ru/';
 
 Cypress.Commands.add('login', (userPhone, password) => {
     cy.request({
