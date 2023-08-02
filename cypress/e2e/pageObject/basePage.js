@@ -52,11 +52,11 @@ class BasePage {
       }
 
       getUserPhoneField() {
-        return cy.get(this.userPhone)
+        return cy.get(this.userPhone);
       }
 
       getUserPassword(){
-        return cy.get(this.passwordInput)
+        return cy.get(this.passwordInput);
       }
 
     loginWithCredentials(userPhone, password) {
