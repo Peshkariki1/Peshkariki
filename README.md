@@ -4,7 +4,7 @@
 The `Cypress` framework, along with `JavaScript`, `Mocha`, and `Chai`, provides a robust end-to-end (E2E) testing solution specifically tailored for the Peshkariki courier service. This framework allows small and medium-sized businesses to address their delivery challenges by ensuring the reliability and quality of all stages of cargo transportation. With Cypress, JavaScript, Mocha, and Chai, Peshkariki's owners can focus on business development, knowing that their courier service is thoroughly tested and meets their customers' expectations.
 ﻿# OpenWeather_05
 
-[https://openweathermap.org](https://alt10.peshkariki.ru/)
+[https://alt10.peshkariki.ru/]
 
 **How to start working in our project?**
 
