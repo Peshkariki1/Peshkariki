@@ -134,18 +134,18 @@ class AddForAll {
 
   selectDeliveryType(option) {
     const deleveryTypeSelector = this.deleveryType[option];
-    cy.get(deleveryTypeSelector).click()
+    cy.get(deleveryTypeSelector).click();
   };
 
   addPromocode(option) {
-    cy.get(this.promocode).type(option)
+    cy.get(this.promocode).type(option);
   };
 
   addAdditionalOptions(value, companyName, orderNumber) {
-    cy.get(this.additionalOptionButtons).click()
-    cy.get(this.additionalsPayment).type(value)
-    cy.get(this.additionalCompanyName).type(companyName)
-    cy.get(this.additionalOrderNumber).type(orderNumber)
+    cy.get(this.additionalOptionButtons).click();
+    cy.get(this.additionalsPayment).type(value);
+    cy.get(this.additionalCompanyName).type(companyName);
+    cy.get(this.additionalOrderNumber).type(orderNumber);
   };
 };
 
