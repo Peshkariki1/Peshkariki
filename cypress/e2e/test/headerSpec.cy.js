@@ -17,7 +17,7 @@ describe('Header', () => {
     cy.title().should('contain', data.title);
   });
 
-  it('Logo exists', () => {
+  it('AT_003.001 | Logo exists', () => {
     header.getLogo().should('be.visible');
   });
 });

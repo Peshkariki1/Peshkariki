@@ -2,20 +2,17 @@
     "data": {
     "userData": [
         {     
-        "title" : "Мои заказы"
+        "title" : "Мои заказы",
+        "expectedUrl": "https://alt10.peshkariki.ru/cabinet/ordersList/"
         },
         {      
-        "title" : "Доступные заказы - Пешкарики - Курьерская служба доставки и Пункты выдачи заказов"
+        "title" : "Доступные заказы - Пешкарики - Курьерская служба доставки и Пункты выдачи заказов",
+        "expectedUrl": "https://alt10.peshkariki.ru/order/courOrders?sub=33380968"
+        },
+        {      
+        "title" : "Пешкарики - Main",
+        "expectedUrl": "https://alt10.peshkariki.ru/admin"
         }
-        ],
-    "userData1": [
-        {
-            "error" : "Ошибка авторизации"
-            }, 
-            {
-            "error" : "Ошибка авторизации"
-            }
         ]
-         
     }
 }

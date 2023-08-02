@@ -1,13 +1,14 @@
 const selectors = {
   homePage: {
     LOGIN_LINK: "ul[class='navigation-list'] a[class='btn-modal']",
+    LOGIN_BLOCK: ".modal-block"
   },
 
   loginPage: {
     USER_PHONE_INPUT: '[name="phone"]',
     PASSWORD_INPUT: '[name="password"]',
     LOGIN_BUTTON: "button[class='send btn-single']",
-    ERROR: ".v-toast__item.v-toast__item--error.v-toast__item--top p"
+    ERROR: ".v-toast__item.v-toast__item--error.v-toast__item--top .v-toast__text"
   },
 
   header: {

@@ -18,7 +18,7 @@ describe('Orders Test', () => {
     cy.title().should('contain', data.title);
   });
 
-  it('Verify url orderListPage is correct', () => {
+  it('AT_004.001 | Verify url orderListPage is correct', () => {
     orderList.navigateToOrderListPage()
     cy.url().should('contain', data.orderListTitle);
   })

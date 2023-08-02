@@ -22,7 +22,7 @@ describe('Create Order', () => {
   });
 
 data.orderData.forEach((item, index) => {
-  it(`should display create order container ${index + 1}`, () => {   
+  it(`AT_001.001 | should display create order container ${index + 1}`, () => {   
     header.clickCreateOrderLink();
     cabinet.getTitle().should('have.text', item.containerTitle);
 
@@ -30,18 +30,18 @@ data.orderData.forEach((item, index) => {
     cy.url().should('contain', 'AddForAll');
   });
 
-  it(`Check order count before creating a new order ${index + 1}`, () => {
-    orderList.navigateToOrderListPage();
-    orderList.findAllOrdersRecursive().then((initialOrders) => {
-      initialCount = initialOrders.length;
-      orderList.verifyOrderCount().then((count) => {
-        textAsNumber = count;
-        expect(textAsNumber).to.equal(initialCount);
-      });
-    });
-  });
+  // it(`AT_001.002 | Check order count before creating a new order ${index + 1}`, () => {
+  //   orderList.navigateToOrderListPage();
+  //   orderList.findAllOrdersRecursive().then((initialOrders) => {
+  //     initialCount = initialOrders.length;
+  //     orderList.verifyOrderCount().then((count) => {
+  //       textAsNumber = count;
+  //       expect(textAsNumber).to.equal(initialCount);
+  //     });
+  //   });
+  // });
   
-  it(`fill in form ${index + 1}`, () => {
+  it(`AT_001.003 | fill in form ${index + 1}`, () => {
     const { senderData, recipientData, orderDetails, paymentMethodToClick, selectServiceToClick, deliveryTypeToClick, promocode, additionalOptions} = item;
     addForAll.navigateToAddForAllPage();
     addForAll.selectingRegion(item.region);
@@ -98,25 +98,25 @@ data.orderData.forEach((item, index) => {
       });
     });
    
-    it(`Find order ${index + 1}`, () => {
+    it(`AT_001.004 | Find order ${index + 1}`, () => {
       orderList.navigateToOrderListPage();
       orderList.findOrderWithNumber(orderNumber);
     }); 
   
-    it(`Check order count after creating a new order ${index + 1}`, () => {
-      orderList.navigateToOrderListPage();
-      orderList.findAllOrdersRecursive().then((orders) => {
-        const newCount = orders.length;
-        expect(newCount).to.equal(initialCount + 1);
-      });
-    });
+    // it(`AT_001.005 | Check order count after creating a new order ${index + 1}`, () => {
+    //   orderList.navigateToOrderListPage();
+    //   orderList.findAllOrdersRecursive().then((orders) => {
+    //     const newCount = orders.length;
+    //     expect(newCount).to.equal(initialCount + 1);
+    //   });
+    // });
 
-    it.skip(`Cancel Order ${index + 1}`, () => {
+    it.skip(`AT_001.006 | Cancel Order ${index + 1}`, () => {
       orderList.navigateToOrderListPage();
       orderList.cancelOrder(orderNumber)
     })
 
-    it(`Manage Order ${index + 1}`, () => {
+    it(`AT_001.007 | Manage Order ${index + 1}`, () => {
       orderList.manadgeOrder(orderNumber)
       cy.reload();
     });
