@@ -1,4 +1,4 @@
-import { data } from '../../fixtures/loginData.json'
+import data from '../../fixtures/loginData.json'
 import selectors from '../selectors';
 
 
@@ -15,14 +15,14 @@ class BasePage {
     openLoginPage() {
         cy.visit('/');
         cy.get(this.loginLink).click();
-        cy.get(this.loginBlock).should('have.text', "Вход в личный кабинетВойти Забыли пароль? ")
+        cy.get(this.loginBlock).should('contain.text', data.blockText)
     }
 
     login(phone, password) {
         if (phone !== "") {
             cy.get(this.userPhone)
             .should('exist')
-            .and('have.attr', "placeholder", "Номер телефона или e-mail")
+            .and('have.attr', "placeholder", data.placeholder1Text)
             .clear()
             .should('be.empty')
             .type(phone, { parseSpecialCharSequences: false });
@@ -30,7 +30,7 @@ class BasePage {
         if (password !== "") {
             cy.get(this.passwordInput)
             .should('exist')
-            .and('have.attr', "placeholder", "Введите пароль")
+            .and('have.attr', "placeholder", data.placeholder2Text)
             .clear()
             .should('be.empty')
             .type(password, { parseSpecialCharSequences: false });
@@ -67,8 +67,6 @@ class BasePage {
     getErrorMsg(){
        return cy.get(this.errorMsg);
     }
-
-
 }
   
 const basePage = new BasePage();
