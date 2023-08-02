@@ -175,11 +175,22 @@ const selectors = {
   orderList: {
     ORDER: ".order",
     ORDER_NUMBER: ".left-header",
-    CANCEL_ORDER_BUTTON: ".order-data .order-action.transrarent",
+    CANCEL_ORDER_BUTTON: '.order-links [type="button"]:last-child',
     REASON_ORDER_CANCELATION: '[value="Получатель отказался от заказа"]',
     SUBMIT_ORDER_CANCELATION: ".black",
     ORDER_COUNT: ".title .red",
+    EDITE_BUTTON: '.order-links [type="button"]:first-child',
+    COMPLETE_DELETE: ".actions button:last-child",
+    SUCCESS_MSG1: ".v-toast__text",
   },
+  selectCancelReason: {
+    REASON_1: ".reasons-list li:nth-child(1) input",
+    REASON_2: ".reasons-list li:nth-child(2) input",
+    REASON_3: ".reasons-list li:nth-child(3) input",
+    REASON_4: ".reasons-list li:nth-child(4) input",
+    REASON_5: ".reasons-list li:nth-child(5) input",
+    REASON_6: ".reasons-list li:nth-child(6) input",
+  }
 };
 
 export default selectors;

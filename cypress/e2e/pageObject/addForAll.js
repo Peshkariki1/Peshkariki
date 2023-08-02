@@ -147,6 +147,15 @@ class AddForAll {
     cy.get(this.additionalCompanyName).type(companyName);
     cy.get(this.additionalOrderNumber).type(orderNumber);
   };
+
+selectOrderDeliveryDay(orderDay){
+  cy.get(this.recipientOrderDaySelect).select(orderDay);
+};
+
+selectOrderDeliveryTime(orderTimeTo){
+  cy.get(this.recipientOrderTimeRightSelect).select(orderTimeTo);
+};
+
 };
 
 const addForAll = new AddForAll();
