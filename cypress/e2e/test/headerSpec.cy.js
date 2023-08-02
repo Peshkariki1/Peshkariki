@@ -9,8 +9,8 @@ describe('Header', () => {
   });
 
   beforeEach(() => {
-    const userPhone = Cypress.env('USER_PHONE')
-    const password = Cypress.env('PASSWORD')
+    const userPhone = Cypress.env('users')[0].USER_PHONE;
+    const password = Cypress.env('users')[0].PASSWORD;
 
     cy.login(userPhone, password);
     cy.visit('/');

@@ -1,6 +1,7 @@
 /// <reference types="cypress"/>
 import basePage from '../pageObject/basePage.js';
-import { data } from '../../fixtures/loginData.json'
+import { userData, userData1 } from '../../fixtures/loginData.json'
+import { users as envUsers } from '../../../cypress.env.json';
 
 
 describe('UI login', () => {
@@ -36,18 +37,19 @@ describe('UI login', () => {
   //   });
   // });
 
-    Cypress.env('users').forEach((user, index) => {
-      it(`AT_002.005 | UI successful login ${index + 1}`, () => {
-        basePage.loginWithCredentials(user.userPhone, user.password);
-        cy.url().should('contain', data.userData[index].expectedUrl)
-        cy.title().should('contain', data.userData[index].title);
-      });
-    });
-  
-      Cypress.env('users1').forEach((user, index) => {
-      it(`AT_002.006 | UI unsuccessful login ${index + 1}`, () => {
-        basePage.loginWithCredentials(user.userPhone, user.password);
-        basePage.getErrorMsg().should('contain', user.error);
-      });
+  envUsers.forEach((user, index) => {
+    it(`AT_002.005 | UI successful login ${index + 1}`, () => {
+      basePage.loginWithCredentials(user.USER_PHONE, user.PASSWORD);
+      cy.url().should('contain', userData[index].expectedUrl);
+      cy.title().should('contain', userData[index].title);
     });
   });
+
+ userData1.forEach((user, index) => {
+    it(`AT_002.006 | UI unsuccessful login ${index + 1}`, () => {
+      const { userPhone, password, error } = user;
+      basePage.loginWithCredentials(userPhone, password);
+      basePage.getErrorMsg().should('contain', error);
+    });
+  });
+});
