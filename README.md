@@ -2,6 +2,56 @@
 
 ### Overview
 The `Cypress` framework, along with `JavaScript`, `Mocha`, and `Chai`, provides a robust end-to-end (E2E) testing solution specifically tailored for the Peshkariki courier service. This framework allows small and medium-sized businesses to address their delivery challenges by ensuring the reliability and quality of all stages of cargo transportation. With Cypress, JavaScript, Mocha, and Chai, Peshkariki's owners can focus on business development, knowing that their courier service is thoroughly tested and meets their customers' expectations.
+﻿# OpenWeather_05
+
+[https://openweathermap.org](https://alt10.peshkariki.ru/)
+
+**How to start working in our project?**
+
+1. Clone repository to your machine.
+
+2. Navigate to project root folder.
+
+3. Run command ```npm ci``` in terminal VScode.
+
+4. After, execute ```npx cypress open```  to run tests.
+
+**Project Coding Convention**
+
+Naming conventions:
+We shall use Camelcase for naming conventions: ```camelCase```
+
+**Spec structure:**
+
+- Each block ```describe``` should contain name of group
+- Each test (```it```) should contain name of test case (```AT```) 
+example:
+
+describe('Create Order', () => {
+
+    it('AT_001.001 | should display create order container', function () {
+        ...
+    })
+
+    it('AT_002.001 |  Check the maximum allowed input value for the userPhone field should not exceed 256 characters', function () {
+        ...
+    })
+})
+
+**Attention!**
+
+Not allowed to install any libraries, plugins, etc. to avoid changing configuration files. 
+The cypress.env.json created automatically when the ci/cd is started
+
+**!!Do not push changed files as:**
+
+```package.json```
+```package.lock.json```
+```ci.yml```
+```cancel.yml```
+```cypress.config.js```
+```e2e.js```
+```cypress.env.json```
 
 ### Key Features
 - **End-to-End Testing**: The framework enables comprehensive testing of the Peshkariki courier service, covering the entire application flow from order creation to delivery tracking.
@@ -11,12 +61,3 @@ The `Cypress` framework, along with `JavaScript`, `Mocha`, and `Chai`, provides 
 - **Fast and Reliable Testing**: Cypress offers fast and reliable test execution with real-time reloading, automatic waiting for network requests, and built-in debugging capabilities, ensuring efficient testing of the Peshkariki courier service.
 - **Cross-Browser Testing**: Cypress supports running tests across multiple browsers, allowing businesses to verify the compatibility and consistent behavior of the courier service on different platforms.
 
-### Benefits for Peshkariki Courier Service
-- **Quality Assurance**: E2E testing using Cypress, JavaScript, Mocha, and Chai ensures the reliability and correctness of the Peshkariki courier service, minimizing the risk of bugs and issues that could impact cargo transportation.
-- **Efficiency**: Automated testing saves time and effort by executing repetitive tests efficiently, allowing Peshkariki's owners to focus on business development and growth.
-- **Customer Satisfaction**: Thorough testing ensures that the courier service operates as expected, providing a seamless experience for customers and enhancing their trust in Peshkariki.
-- **Scalability**: The framework easily scales to accommodate the evolving needs of the courier service as Peshkariki expands its operations, integrates new features, and adapts to changing industry requirements.
-- **Business Focus**: By relying on the Cypress framework and associated technologies, Peshkariki's owners can concentrate on improving their business operations, knowing that their courier service is well-tested and reliable.
-
-### Conclusion
-The Cypress framework, combined with JavaScript, Mocha, and Chai, provides a tailored end-to-end testing solution for the Peshkariki courier service. With this framework, Peshkariki ensures the quality, reliability, and efficiency of cargo transportation, allowing businesses to concentrate on their core operations. By thoroughly testing the courier service, Peshkariki enhances customer satisfaction, builds trust, and positions itself as a leader in the industry.
