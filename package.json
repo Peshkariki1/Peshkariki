@@ -1,26 +1,15 @@
 {
-  "name": "peshkariki",
+  "name": "peshkariki-1",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "cypress",
+  "main": "cypress.config.js",
   "scripts": {
-    "cy:run": "cypress run",
-    "cy:open": "cypress open"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Nadzey/Peshkariki.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nadzeya Kaluzayeva",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nadzey/Peshkariki/issues"
-  },
-  "homepage": "https://github.com/Nadzey/Peshkariki#readme",
   "devDependencies": {
-    "cypress": "^12.17.0",
-    "cypress-mochawesome-reporter": "^3.5.1",
-    "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^4.3.0"
+    "cypress": "^12.17.3",
+    "cypress-mochawesome-reporter": "^3.5.1"
   }
 }
