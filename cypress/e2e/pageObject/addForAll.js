@@ -49,7 +49,7 @@ class AddForAll {
   }
 
   navigateToAddForAllPage() {
-    cy.visit('https://alt10.peshkariki.ru/cabinet/AddForAll');
+    cy.visit(Cypress.config().baseUrl + '/cabinet/AddForAll');
   };
 
   selectingRegion(option){
