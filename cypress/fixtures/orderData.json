@@ -44,9 +44,13 @@
     }, 
 
     "successMsg": "создан!",
-    "containerTitle": "Выберите тип заказа"
+    "successMsg1": " Заказ отредактирован! ",
+    "containerTitle": "Выберите тип заказа",
+    "newPickupDate": 2,
+    "newPickupTimeTo": "19:30",
+    "selectCancelReason": "REASON_1",
+    "successMsg2": "отменен"
     },
-
     {
       "deliveryTypeToClick": "BY_CAR",
       "region": "2",
@@ -90,7 +94,12 @@
         }, 
 
         "successMsg": "создан!",
-        "containerTitle": "Выберите тип заказа"
+        "successMsg1": " Заказ отредактирован! ",
+        "containerTitle": "Выберите тип заказа",
+        "newPickupDate": 1,
+        "newPickupTimeTo": "19:30",
+        "selectCancelReason": "REASON_2",
+        "successMsg2": "отменен"
         }
     ],
       "title" : "Мои заказы", 

@@ -111,14 +111,24 @@ data.orderData.forEach((item, index) => {
     //   });
     // });
 
-    it.skip(`AT_001.006 | Cancel Order ${index + 1}`, () => {
-      orderList.navigateToOrderListPage();
-      orderList.cancelOrder(orderNumber)
-    })
+    it(`AT_001.006 | Manage Order - Change delivery date ${index + 1}`, () => {
+      orderList.navigateToEditOrderPage(orderNumber);
+      orderList.clickEditeButton();
+      addForAll.selectOrderDeliveryDay(item.newPickupDate);
+      addForAll.selectOrderDeliveryTime(item.newPickupTimeTo)
+      addForAll.startOrder();
+      addForAll.getSuccessMessage()
+      .should('exist')
+      .and('contain', item.successMsg1);
+    });
 
-    it(`AT_001.007 | Manage Order ${index + 1}`, () => {
-      orderList.manadgeOrder(orderNumber)
-      cy.reload();
+
+    it(`AT_001.007 | Cancel Order ${index + 1}`, () => {
+      orderList.navigateToEditOrderPage(orderNumber);
+      orderList.clickCancelButton();
+      orderList.selectCancelReason(item.selectCancelReason);
+      orderList.compliteDElete();
+      orderList.checkSuccesDelete().should('contain', item.successMsg2)
     });
   });
 });
