@@ -57,7 +57,6 @@ class AddForAll {
   };
 
   fillInSenderData(address, entrance, floor, apt, phoneNumber, orderDay, orderTimeFrom, orderTimeTo) {
-   // Используем асинхронную функцию для использования await
   cy.get(this.senderStreetAddress)
     .clear()
     .type(address)
@@ -67,16 +66,22 @@ class AddForAll {
     .first()
     .then((dropdown) => {
       if (Cypress.dom.isVisible(dropdown)) {
-    // Если выпадающее меню видимо, кликаем на первый элемент
       cy.wrap(dropdown).click();
   } else {
-    // Если выпадающее меню не видимо, используем значение entrance
-    cy.get(this.senderEntrance).type(entrance);
+    if (entrance !== ""){
+      cy.get(this.senderEntrance).type(entrance);
+    }
   }
 });
-    cy.get(this.senderFloor).clear().type(floor);
-    cy.get(this.senderApt).clear().type(apt);
-    cy.get(this.senderPhoneNumberInput).clear().type(phoneNumber);
+if (floor !== ""){
+  cy.get(this.senderFloor).clear().type(floor);
+}
+if (apt !== ""){
+  cy.get(this.senderApt).clear().type(apt);
+}
+if (phoneNumber !== ""){
+  cy.get(this.senderPhoneNumberInput).clear().type(phoneNumber);
+}
     cy.get(this.senderOrderDaySelect).select(orderDay);
     cy.get(this.senderOrderTimeLeftSelect).select(orderTimeFrom);
     cy.get(this.senderOrderTimeRightSelect).select(orderTimeTo);
@@ -85,10 +90,18 @@ class AddForAll {
   fillInRecipientData(address, entrance, floor, apt, phoneNumber, orderDay, orderTimeFrom, orderTimeTo) {
     cy.get(this.recipientStreetAdress).type(address);
     cy.get(this.recipientAddressDropdown).first().click()
-    cy.get(this.recipientEntrance).clear().type(entrance);
-    cy.get(this.recipientFloor).clear().type(floor);
-    cy.get(this.recipientApt).clear().type(apt);
-    cy.get(this.recipientPhoneNumberInput).clear().type(phoneNumber);
+    if (entrance !== ""){
+      cy.get(this.recipientEntrance).clear().type(entrance);
+    }
+    if (floor !== ""){
+      cy.get(this.recipientFloor).clear().type(floor);
+    }
+    if (apt !== ""){
+      cy.get(this.recipientApt).clear().type(apt);
+    }
+    if (phoneNumber !== ""){
+      cy.get(this.recipientPhoneNumberInput).clear().type(phoneNumber);
+    }
     cy.get(this.recipientOrderDaySelect).select(orderDay);
     cy.get(this.recipientOrderTimeLeftSelect).select(orderTimeFrom);
     cy.get(this.recipientOrderTimeRightSelect).select(orderTimeTo);
@@ -138,14 +151,22 @@ class AddForAll {
   };
 
   addPromocode(option) {
-    cy.get(this.promocode).type(option);
+    if (option !== ""){
+      cy.get(this.promocode).type(option);
+    };
   };
 
   addAdditionalOptions(value, companyName, orderNumber) {
     cy.get(this.additionalOptionButtons).click();
-    cy.get(this.additionalsPayment).type(value);
-    cy.get(this.additionalCompanyName).type(companyName);
-    cy.get(this.additionalOrderNumber).type(orderNumber);
+    if (value !== ""){
+      cy.get(this.additionalsPayment).type(value);
+    }
+    if (companyName !== ""){
+      cy.get(this.additionalCompanyName).type(companyName);
+    }
+    if (orderNumber !== ""){
+      cy.get(this.additionalOrderNumber).type(orderNumber);
+    };
   };
 
 selectOrderDeliveryDay(orderDay){

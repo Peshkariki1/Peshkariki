@@ -67,8 +67,8 @@
         },
         "recipientData" : {
           "cyrillicAddress1": "Таврический переулок 7",
-          "entrance": "100",
-          "floor": "1000",
+          "entrance": "",
+          "floor": "",
           "apt": "11111",
           "phoneNumber": "8999888822",
           "pickupDate": 0,
@@ -85,12 +85,12 @@
         "paymentMethodToClick": "TYPE_2",
         "selectServiceToClick": "OPTION_3",
 
-        "promocode": "ух бля",
+        "promocode": "",
 
         "additionalOptions": {
-          "payment": "0",
-          "companyName": "n/a",
-          "orderNumber": "n/a"
+          "payment": "",
+          "companyName": "",
+          "orderNumber": ""
         }, 
 
         "successMsg": "создан!",
