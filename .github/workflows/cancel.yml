@@ -1,0 +1,23 @@
+name: Cancel
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  cancel:
+    name: 'Cancel previous runs'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить идентификаторы запущенных процессов
+        id: get_runs
+        run: |
+          echo "::set-output name=runs::$(curl -s -X GET \
+            -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+            -H 'Accept: application/vnd.github.v3+json' \
+            https://api.github.com/repos/${{ github.repository }}/actions/runs | jq -r '.workflow_runs[].id')"
+      - name: Отменить процесс
+        uses: styfle/cancel-workflow-action@0.9.0
+        with:
+          run_id: ${{ steps.get_runs.outputs.runs }}
+          access_token: ${{ secrets.GITHUB_TOKEN }}
