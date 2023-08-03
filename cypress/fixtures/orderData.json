@@ -10,7 +10,7 @@
     "floor": "1",
     "apt": "111",
     "phoneNumber": "8999888888",
-    "pickupDate": 1,
+    "pickupDate": 2,
     "pickupTimeFrom": "03:30",
     "pickupTimeTo": "23:30",
     "sendername":" максим***/////548369043"
@@ -21,8 +21,8 @@
       "floor": "11",
       "apt": "1111",
       "phoneNumber": "8999888889",
-      "pickupDate": 2,
-      "pickupTimeFrom": "03:30",
+      "pickupDate": 3,
+      "pickupTimeFrom": "09:30",
       "pickupTimeTo": "23:30",
       "sendername": "John"
       },
@@ -46,7 +46,7 @@
     "successMsg": "создан!",
     "successMsg1": " Заказ отредактирован! ",
     "containerTitle": "Выберите тип заказа",
-    "newPickupDate": 2,
+    "newPickupDate": 4,
     "newPickupTimeTo": "19:30",
     "selectCancelReason": "REASON_1",
     "successMsg2": "отменен"

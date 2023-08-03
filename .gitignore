@@ -105,3 +105,6 @@ tests/.retry_succeeded
 website/docs/Contribute.md
 website/community/Resources.md
 cypress.env.json
+ci.yaml
+cancel.yaml
+

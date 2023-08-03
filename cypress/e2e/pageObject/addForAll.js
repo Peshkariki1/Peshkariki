@@ -57,22 +57,20 @@ class AddForAll {
   };
 
   fillInSenderData(address, entrance, floor, apt, phoneNumber, orderDay, orderTimeFrom, orderTimeTo) {
-  cy.get(this.senderStreetAddress)
-    .clear()
-    .type(address)
-    .wait(2000);
+    cy.get(this.senderStreetAddress)
+      .clear({force: true})
+      .type(address)
+      .wait(2000);
+  
+    cy.get(this.senderAddressDropdown)
+      .then((dropdown) => {
+        if (Cypress.dom.isVisible(dropdown)) {
+          cy.wrap(dropdown).first().click();
+        } else {
+          cy.get(this.senderEntrance).type(entrance);
+        }
+      });
 
-  cy.get(this.senderAddressDropdown)
-    .first()
-    .then((dropdown) => {
-      if (Cypress.dom.isVisible(dropdown)) {
-      cy.wrap(dropdown).click();
-  } else {
-    if (entrance !== ""){
-      cy.get(this.senderEntrance).type(entrance);
-    }
-  }
-});
 if (floor !== ""){
   cy.get(this.senderFloor).clear().type(floor);
 }

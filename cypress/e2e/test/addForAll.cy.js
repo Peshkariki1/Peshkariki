@@ -42,11 +42,11 @@ data.orderData.forEach((item, index) => {
   // });
   
   it(`AT_001.003 | fill in form ${index + 1}`, () => {
-    const { senderData, recipientData, orderDetails, paymentMethodToClick, selectServiceToClick, deliveryTypeToClick, promocode, additionalOptions} = item;
+    const { senderData, recipientData, orderDetails, paymentMethodToClick, selectServiceToClick, deliveryTypeToClick, promocode, additionalOptions } = item;
     addForAll.navigateToAddForAllPage();
     addForAll.selectingRegion(item.region);
     addForAll.selectDeliveryType(deliveryTypeToClick);
-
+  
     addForAll.fillInSenderData(
       senderData.cyrillicAddress1,
       senderData.entrance,
