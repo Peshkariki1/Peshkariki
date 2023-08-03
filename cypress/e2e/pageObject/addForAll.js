@@ -58,7 +58,7 @@ class AddForAll {
 
   fillInSenderData(address, entrance, floor, apt, phoneNumber, orderDay, orderTimeFrom, orderTimeTo) {
     cy.get(this.senderStreetAddress)
-      .clear()
+      .clear({force: true})
       .type(address)
       .wait(2000);
   
