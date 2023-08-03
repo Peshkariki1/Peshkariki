@@ -13,8 +13,12 @@ The `Cypress` framework, along with `JavaScript`, `Mocha`, and `Chai`, provides 
 2. Navigate to project root folder.
 
 3. Run command ```npm ci``` in terminal VScode.
+   
+4. Create new branch
 
-4. After, execute ```npx cypress open```  to run tests.
+5. After, execute ```npx cypress open```  to run tests.
+   
+6. For running tests with reports use ```npx cypress run --headed --browser chrome```
 
 **Project Coding Convention**
 
@@ -40,8 +44,8 @@ describe('Create Order', () => {
 
 **Attention!**
 
-```Not allowed to install any libraries, plugins, etc. to avoid changing configuration files. ```
-```The cypress.env.json created automatically when the ci/cd is started```
+1. Not allowed to install any libraries, plugins, etc. to avoid changing configuration files.
+2. The cypress.env.json is created automatically when the ci/cd is started
 
 **!!Do not push changed files as:**
 
