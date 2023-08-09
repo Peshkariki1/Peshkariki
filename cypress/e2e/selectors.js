@@ -1,7 +1,27 @@
 const selectors = {
   homePage: {
     LOGIN_LINK: "ul[class='navigation-list'] a[class='btn-modal']",
-    LOGIN_BLOCK: ".modal-block"
+    LOGIN_BLOCK: ".modal-block",
+    REGISTER_BTN: ".nav-item.registration",  
+  },
+
+  registerPage: {
+    REGISTER_BLOCK_TITLE: ".modal-block .title",
+    registerType: {
+      REGISTER_TYPE_PERSON: ".modal-buttons .reg-type:nth-child(1)",
+      REGISTER_TYPE_ENTITY: ".modal-buttons .reg-type:nth-child(2)",
+      REGISTER_TYPE_COURIER: ".modal-buttons .reg-type:nth-child(3)",
+    },
+    INPUT_NAME: '[placeholder="Ваше Имя"]',
+    INPUT_PASSWORD: '[name="password"]',
+    INPUT_EMAIL: '[placeholder="Электронная почта"]',
+    INPUT_PHONE: '.phone-input',
+    CONFIRM_PHONE_BTN: '.confirm',
+    CONFIRM_CODE_INPUT: '[name="confirmCode"]',
+    AGRIMENT_CHECKBOX: '#agreement-checkbox',
+    PROMOCODE_LINK: '.promocode',
+    PROMOCODE_INPUT: '[placeholder="Промокод (если есть)"]',
+    REGISTER_SUBMIT_BTN: '.send.btn-single'
   },
 
   loginPage: {

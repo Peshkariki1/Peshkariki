@@ -1,4 +1,5 @@
 import data from '../../fixtures/loginData.json'
+import registerData from '../../fixtures/registerData.json'
 import selectors from '../selectors';
 
 
@@ -11,7 +12,10 @@ class BasePage {
       this.loginButton = selectors.loginPage.LOGIN_BUTTON;
       this.errorMsg = selectors.loginPage.ERROR;
       this.loginBlock = selectors.homePage.LOGIN_BLOCK;
+      this.registerBtn = selectors.homePage.REGISTER_BTN;
+      this.registerBlock = selectors.registerPage.REGISTER_BLOCK_TITLE;
     }
+
     openLoginPage() {
         cy.visit('/');
         cy.get(this.loginLink).click();
@@ -66,6 +70,12 @@ class BasePage {
 
     getErrorMsg(){
        return cy.get(this.errorMsg);
+    }
+
+    openRegisterPage(blockText){
+      cy.visit('/');
+        cy.get(this.registerBtn).click();
+        cy.get(this.registerBlock).should('have.text', blockText);
     }
 }
   

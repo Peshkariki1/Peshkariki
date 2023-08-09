@@ -1,0 +1,46 @@
+{
+"data":{
+    "blockText": "Регистрация",
+    "placeholder1Text": "Ваше Имя",
+    "placeholder2Text": "Придумайте пароль",
+    "placeholder3Text": "Электронная почта",
+    "placeholder4Text": "Промокод (если есть)",
+    "placeholder5Text": "(___)___-__-__",
+    
+    "userData": [
+            {
+                "registerType": "REGISTER_TYPE_PERSON",
+                "name": "Тетя Мотя", 
+                "phone": "9900000026",
+                "password": "NewPassword123",
+                "email": "",
+                "promocode": "",
+                "succesMsg": "",
+                "code": 123456
+            },
+            {
+                "registerType": "REGISTER_TYPE_ENTITY",
+                "name": "Тетя Мотя ИП", 
+                "phone": "9900000027",
+                "password": "NewPassword123",
+                "email": "newtest@gmail.com",
+                "promocode": "",
+                "succesMsg": "",
+                "code": 123456
+            }
+        ], 
+        "userData1": [
+            {
+                "registerType": "REGISTER_TYPE_COURIER",
+                "name": "Тетя Мотильда", 
+                "phone": "9900000028",
+                "password": "NewPassword123",
+                "email": "",
+                "succesMsg": "",
+                "code": 123456
+            } 
+        ]
+    }
+   
+    
+}
