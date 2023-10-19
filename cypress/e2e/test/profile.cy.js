@@ -58,5 +58,4 @@ beforeEach(() => {
         profile.checkMsgNotExists();
     });
 });
-
-})
+});
