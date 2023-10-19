@@ -24,22 +24,22 @@ describe('Create Order', () => {
 data.orderData.forEach((item, index) => {
   it(`AT_001.001 | should display create order container ${index + 1}`, () => {   
     header.clickCreateOrderLink();
-    cabinet.getTitle().should('have.text', item.containerTitle);
-
+    cabinet.getTitle().should('contain', item.containerTitle);
     cabinet.clickAddForAll()
     cy.url().should('contain', 'AddForAll');
   });
 
-  // it(`AT_001.002 | Check order count before creating a new order ${index + 1}`, () => {
-  //   orderList.navigateToOrderListPage();
-  //   orderList.findAllOrdersRecursive().then((initialOrders) => {
-  //     initialCount = initialOrders.length;
-  //     orderList.verifyOrderCount().then((count) => {
-  //       textAsNumber = count;
-  //       expect(textAsNumber).to.equal(initialCount);
-  //     });
-  //   });
-  // });
+  it(`AT_001.002 | Check order count before creating a new order ${index + 1}`, () => {
+    orderList.navigateToOrderListPage();
+    
+    orderList.findAllOrdersRecursive().then((initialOrders) => {
+      initialCount = initialOrders.length;
+      orderList.verifyOrderCount().then((count) => {
+        textAsNumber = count;
+        expect(textAsNumber).to.equal(initialCount);
+      });
+    });
+  });
   
   it(`AT_001.003 | fill in form ${index + 1}`, () => {
     const { senderData, recipientData, orderDetails, paymentMethodToClick, selectServiceToClick, deliveryTypeToClick, promocode, additionalOptions } = item;
@@ -103,13 +103,13 @@ data.orderData.forEach((item, index) => {
       orderList.findOrderWithNumber(orderNumber);
     }); 
   
-    // it(`AT_001.005 | Check order count after creating a new order ${index + 1}`, () => {
-    //   orderList.navigateToOrderListPage();
-    //   orderList.findAllOrdersRecursive().then((orders) => {
-    //     const newCount = orders.length;
-    //     expect(newCount).to.equal(initialCount + 1);
-    //   });
-    // });
+    it(`AT_001.005 | Check order count after creating a new order ${index + 1}`, () => {
+      orderList.navigateToOrderListPage();
+      orderList.findAllOrdersRecursive().then((orders) => {
+        const newCount = orders.length;
+        expect(newCount).to.equal(initialCount + 1);
+      });
+    });
 
     it(`AT_001.006 | Manage Order - Change delivery date ${index + 1}`, () => {
       orderList.navigateToEditOrderPage(orderNumber);

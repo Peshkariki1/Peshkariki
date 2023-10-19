@@ -1,0 +1,63 @@
+{
+    "data": {
+        "userData": 
+        [
+                {
+                    "userName": "Фамилия Имя",
+                    "userCity": "Екатеринбург", 
+                    "userSite": "example.com",
+                    "msgSucess": "Данные успешно изменены",
+                    "defaultUserName": "Фамилия Имя",
+                    "changetCity": "Екатеринбург",
+                    "changedSite": "example.com"
+                },
+                {
+                    "userName": "Фамилия Имя",
+                    "userCity": "Санкт-Петербург", 
+                    "userSite": "nadiatest.com",
+                    "msgSucess": "Данные успешно изменены",
+                    "defaultUserName": "Фамилия Имя",
+                    "changetCity": "Санкт-Петербург",
+                    "changedSite": "nadiatest.com"
+                }
+            ],
+            "userData1": 
+            [
+                {
+                    "userName": "Имя Фамилия Отчество",
+                    "userCity": "Москва", 
+                    "userSite": "test.com",
+                    "msgErr": "Изменять Ф.И.О. можно не чаще одного раза в месяц.",
+                    "msgSucess": "Данные успешно изменены",
+                    "defaultUserName": "Фамилия Имя",
+                    "changetCity": "Москва",
+                    "changedSite": "test.com"
+                },
+                {
+                    "userName": "Новое Имя",
+                    "userCity": "Екатеринбург", 
+                    "userSite": "test.com",
+                    "msgErr": "Изменять Ф.И.О. можно не чаще одного раза в месяц.",
+                    "msgSucess": "Данные успешно изменены",
+                    "defaultUserName": "Фамилия Имя",
+                    "changetCity": "Екатеринбург",
+                    "changedSite": "test.com"
+                }
+            ],
+            "userData2": 
+            [
+                {
+                    "userName": "Фамилия Имя",
+                    "userCity": "Екатеринбург", 
+                    "userSite": "example.com",
+                    "msgSucess": "Данные успешно изменены",
+                    "defaultUserName": "Фамилия Имя",
+                    "changetCity": "Екатеринбург",
+                    "changedSite": "example.com"
+                }
+            ],
+            "title" : "Мои заказы"
+    }
+    
+}
+       

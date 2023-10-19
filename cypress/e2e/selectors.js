@@ -3,6 +3,7 @@ const selectors = {
     LOGIN_LINK: "ul[class='navigation-list'] a[class='btn-modal']",
     LOGIN_BLOCK: ".modal-block",
     REGISTER_BTN: ".nav-item.registration",  
+    CABINET: '[src="/images/cabinet/arrow-down.svg"]',
   },
 
   registerPage: {
@@ -38,9 +39,21 @@ const selectors = {
 
   cabinet: {
     CREATE_ORDER_CONTAINER: ".modal-content-container",
-    CONTAINER_TITLE:
-      "div[class='white-block modal-block default-modal'] div[class='title']",
+    CONTAINER_TITLE: ".modal-content-container .white-block.modal-block.default-modal .title h3",
     ADD_FOR_ALL: "a[href='/cabinet/AddForAll']",
+    cabinetNavigation: '.navigation-wrap',
+    profile: '[href="/cabinet/profile"]',
+    balance: '[href="/cabinet/balance/addBalance"]',
+    staffCouriers: '[href="/cabinet/staffCouriers"]',
+    settings: '[href="/cabinet/profileSettings"]',
+    companyDetails: '[href="/cabinet/companyDetails"]',
+    favoritesCouriers: '[href="/cabinet/favoriteCouriers"]',
+    documents: '[href="/cabinet/documents"]',
+    integration: '[href="/cabinet/integration"]',
+    refProg: '[href="/cabinet/refProg"]',
+    pickUpCenters: '[href="/cabinet/pickupCenters"]',
+    verification: '[href="/cabinet/verification"]',
+    logOut: '[href="/logout"]',
   },
 
   addForAll: {
@@ -79,7 +92,7 @@ const selectors = {
       PHONE_NUMBER_INPUT:
         ".order-block__animation-wrapper .order-block .expand-block .block .sender-info .phone-input-wrapper input",
       ORDER_DAY_SELECT:
-        "body > div:nth-child(7) > div:nth-child(2) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(1) > section:nth-child(1) > div:nth-child(1) > span:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)",
+        ".order-block__animation-wrapper .order-block .expand-block .block .sender-info #day",
       ORDER_TIME_LEFT_SELECT:
         ".order-block__animation-wrapper .order-block .expand-block .block .sender-info .order-input.time-from select[name='time']",
       ORDER_TIME_RIGHT_SELECT:
@@ -203,6 +216,7 @@ const selectors = {
     COMPLETE_DELETE: ".actions button:last-child",
     SUCCESS_MSG1: ".v-toast__text",
   },
+
   selectCancelReason: {
     REASON_1: ".reasons-list li:nth-child(1) input",
     REASON_2: ".reasons-list li:nth-child(2) input",
@@ -210,7 +224,19 @@ const selectors = {
     REASON_4: ".reasons-list li:nth-child(4) input",
     REASON_5: ".reasons-list li:nth-child(5) input",
     REASON_6: ".reasons-list li:nth-child(6) input",
+  }, 
+
+  userProfile: {
+    userName: "#fio",
+    useerPhoneNumber: "#phone",
+    userEmail: "#email",
+    userCity: "div.white-block.user-section.mt > div:nth-child(3) > div:nth-child(1) > select",
+    userPassword: "#pass",
+    userSite: "#site",
+    msgErr: "",
+    msgSuc: ".v-toast__text"
   }
+
 };
 
 export default selectors;

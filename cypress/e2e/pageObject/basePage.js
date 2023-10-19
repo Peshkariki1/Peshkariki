@@ -14,6 +14,9 @@ class BasePage {
       this.loginBlock = selectors.homePage.LOGIN_BLOCK;
       this.registerBtn = selectors.homePage.REGISTER_BTN;
       this.registerBlock = selectors.registerPage.REGISTER_BLOCK_TITLE;
+      this.cabinetArrowDown = selectors.homePage.CABINET;
+      this.profileLink = selectors.cabinet.profile;
+      this.cabinetNavigation = selectors.cabinet.cabinetNavigation;
     }
 
     openLoginPage() {
@@ -76,6 +79,18 @@ class BasePage {
       cy.visit('/');
         cy.get(this.registerBtn).click();
         cy.get(this.registerBlock).should('have.text', blockText);
+    }
+
+    openCabinetMenu(){
+      cy.get(this.cabinetArrowDown).click();
+    }
+
+    openProfile(){
+      cy.get(this.profileLink).click();
+    }
+
+    getCountOfLinksNavigation(){
+      return cy.get(this.cabinetNavigation).find('li');
     }
 }
   

@@ -14,9 +14,9 @@ class Cabinet {
   }
 
   getTitle() {
-    return cy.get(this.containerTitleSelector);
+    return cy.get(this.containerTitleSelector).should('be.visible').invoke('text');
   }
-
+  
   clickAddForAll() {
     cy.get(this.addForAll).click()
   }
