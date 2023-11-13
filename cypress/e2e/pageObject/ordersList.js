@@ -82,7 +82,6 @@ class OrderList {
   }  
 }
 
+
 const orderList = new OrderList();
 export default orderList;
-
-
